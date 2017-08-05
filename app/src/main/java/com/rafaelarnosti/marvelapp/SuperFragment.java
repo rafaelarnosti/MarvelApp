@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.rafaelarnosti.marvelapp.Model.ResponseHeroiMarvel;
 import com.rafaelarnosti.marvelapp.Model.Super;
 import com.rafaelarnosti.marvelapp.adapter.MarvelAdapter;
 import com.rafaelarnosti.marvelapp.adapter.OnItemClickListener;
@@ -65,17 +67,17 @@ public class SuperFragment extends Fragment {
 
     private void carregaDados(){
         superAPI = APIUtils.getSuper();
-        superAPI.getSupers().enqueue(new Callback<List<Super>>() {
+        superAPI.getSupers().enqueue(new Callback<ResponseHeroiMarvel>() {
             @Override
-            public void onResponse(Call<List<Super>> call, Response<List<Super>> response) {
+            public void onResponse(Call<ResponseHeroiMarvel> call, Response<ResponseHeroiMarvel> response) {
                 if(response.isSuccessful()){
-                    marvelAdapter.update(response.body());
+                    marvelAdapter.update(response.body().getData().getResults());
                 }
             }
 
             @Override
-            public void onFailure(Call<List<Super>> call, Throwable t) {
-
+            public void onFailure(Call<ResponseHeroiMarvel> call, Throwable t) {
+                Log.e("ERRO", "DEU RUIM");
             }
         });
     }
