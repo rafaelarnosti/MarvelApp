@@ -49,7 +49,7 @@ public class SuperFragment extends Fragment {
 
         rvSuper = (RecyclerView) itemView.findViewById(R.id.rvSuper);
 
-        marvelAdapter = new MarvelAdapter(new ArrayList<Super>(),
+        marvelAdapter = new MarvelAdapter(new ResponseHeroiMarvel(),
                 new OnItemClickListener() {
                     @Override
                     public void onItemClick(Super item) {
@@ -71,7 +71,7 @@ public class SuperFragment extends Fragment {
             @Override
             public void onResponse(Call<ResponseHeroiMarvel> call, Response<ResponseHeroiMarvel> response) {
                 if(response.isSuccessful()){
-                    marvelAdapter.update(response.body().getData().getResults());
+                    marvelAdapter.update(response.body());
                 }
             }
 

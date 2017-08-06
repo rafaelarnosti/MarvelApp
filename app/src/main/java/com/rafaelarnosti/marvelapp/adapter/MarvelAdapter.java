@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.rafaelarnosti.marvelapp.Model.ResponseHeroiMarvel;
 import com.rafaelarnosti.marvelapp.Model.Super;
 import com.rafaelarnosti.marvelapp.R;
 import com.squareup.picasso.Picasso;
@@ -18,10 +19,10 @@ import java.util.List;
  */
 
 public class MarvelAdapter extends RecyclerView.Adapter<MarvelAdapter.MarvelViewHolder>{
-    private List<Super> supers;
+    private ResponseHeroiMarvel supers;
     private OnItemClickListener listener;
 
-    public MarvelAdapter(List<Super> supers, OnItemClickListener listener){
+    public MarvelAdapter(ResponseHeroiMarvel supers, OnItemClickListener listener){
         this.supers = supers;
         this.listener = listener;
     }
@@ -36,17 +37,16 @@ public class MarvelAdapter extends RecyclerView.Adapter<MarvelAdapter.MarvelView
 
     @Override
     public void onBindViewHolder(MarvelAdapter.MarvelViewHolder holder, final int position) {
-        holder.tvTitulo.setText((supers.get(position).getName()));
-        holder.tvSubTitulo.setText(supers.get(position).getDescription());
-
+        holder.tvTitulo.setText((supers.getData().getResults().get(position).getName()));
+        holder.tvSubTitulo.setText(supers.getData().getResults().get(position).getDescription());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.onItemClick(supers.get(position));
+                listener.onItemClick(supers.getData().getResults().get(position));
             }
         });
         Picasso.with(holder.itemView.getContext())
-                .load(supers.get(position).getResourceURI())
+                .load(supers.getData().getResults().get(position).getResourceURI())
                 .into(holder.ivSuper);
     }
 
@@ -68,7 +68,7 @@ public class MarvelAdapter extends RecyclerView.Adapter<MarvelAdapter.MarvelView
             tvSubTitulo = (TextView) itemView.findViewById(R.id.tvSubTitulo);
         }
     }
-    public void update(List<Super>supers){
+    public void update(ResponseHeroiMarvel supers){
         this.supers = supers;
         notifyDataSetChanged();
     }
