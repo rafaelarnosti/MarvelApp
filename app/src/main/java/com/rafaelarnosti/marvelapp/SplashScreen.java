@@ -1,9 +1,11 @@
 package com.rafaelarnosti.marvelapp;
 
+
+
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
@@ -37,8 +39,8 @@ public class SplashScreen extends AppCompatActivity {
             public void run() {
                 // Após o tempo definido irá executar a próxim atela
                 Intent intent = new Intent(SplashScreen.this,
-                        MarvelNavigation.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+                        LoginActivity.class);
+               intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 startActivity(intent);
                 SplashScreen.this.finish();
             }

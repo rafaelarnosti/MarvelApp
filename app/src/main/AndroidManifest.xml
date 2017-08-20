@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rafaelarnosti.marvelapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+
         <activity
             android:name=".SplashScreen"
             android:theme="@style/FullScreen">
@@ -19,5 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MarvelNavigation" />
+        <activity android:name=".LoginActivity"></activity>
     </application>
+
 </manifest>
