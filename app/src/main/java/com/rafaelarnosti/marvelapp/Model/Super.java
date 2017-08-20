@@ -10,108 +10,45 @@ import java.util.List;
  */
 
 public class Super {
-    private int Id;
+
 
     public int getId() {
-        return Id;
+        return id;
     }
 
     public void setId(int id) {
-        Id = id;
+        id = id;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        name = name;
     }
 
     public String getDescription() {
-        return Description;
+        return description;
     }
 
     public void setDescription(String description) {
-        Description = description;
+        description = description;
     }
 
     public Date getModified() {
-        return Modified;
+        return modified;
     }
 
     public void setModified(Date modified) {
-        Modified = modified;
-    }
-
-    public String getResourceURI() {
-        return ResourceURI;
-    }
-
-    public void setResourceURI(String resourceURI) {
-        ResourceURI = resourceURI;
+        modified = modified;
     }
 
 
-
-    public Image getThumbnail() {
-        return Thumbnail;
-    }
-
-    public void setThumbnail(Image thumbnail) {
-        Thumbnail = thumbnail;
-    }
-
-    public ComicList getComics() {
-        return Comics;
-    }
-
-    public void setComics(ComicList comics) {
-        Comics = comics;
-    }
-
-    public StoryList getStories() {
-        return Stories;
-    }
-
-    public void setStories(StoryList stories) {
-        Stories = stories;
-    }
-
-    public EventList getEvents() {
-        return Events;
-    }
-
-    public void setEvents(EventList events) {
-        Events = events;
-    }
-
-    public SeriesList getSeries() {
-        return Series;
-    }
-
-    public void setSeries(SeriesList series) {
-        Series = series;
-    }
-
-    public List<Url> getUrls() {
-        return Urls;
-    }
-
-    public void setUrls(List<Url> urls) {
-        Urls = urls;
-    }
-
-    private String Name;
-    private String Description;
-    private Date Modified;
-    private String ResourceURI;
-    private List<Url> Urls;
-    private Image Thumbnail;
-    private ComicList Comics;
-    private StoryList Stories;
-    private EventList Events;
-    private SeriesList Series;
+    private int id;
+    private String name;
+    private String description;
+    private Date modified;
 }
 
 

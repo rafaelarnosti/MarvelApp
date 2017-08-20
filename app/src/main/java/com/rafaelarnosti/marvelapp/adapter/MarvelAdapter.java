@@ -29,14 +29,14 @@ public class MarvelAdapter extends RecyclerView.Adapter<MarvelAdapter.MarvelView
 
 
     @Override
-    public MarvelAdapter.MarvelViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MarvelViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View meuLayout = inflater.inflate(R.layout.super_row,parent,false);
         return new MarvelViewHolder(meuLayout);
     }
 
     @Override
-    public void onBindViewHolder(MarvelAdapter.MarvelViewHolder holder, final int position) {
+    public void onBindViewHolder(MarvelViewHolder holder, final int position) {
         holder.tvTitulo.setText((supers.getData().getResults().get(position).getName()));
         holder.tvSubTitulo.setText(supers.getData().getResults().get(position).getDescription());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -45,9 +45,9 @@ public class MarvelAdapter extends RecyclerView.Adapter<MarvelAdapter.MarvelView
                 listener.onItemClick(supers.getData().getResults().get(position));
             }
         });
-        Picasso.with(holder.itemView.getContext())
+/*        Picasso.with(holder.itemView.getContext())
                 .load(supers.getData().getResults().get(position).getResourceURI())
-                .into(holder.ivSuper);
+                .into(holder.ivSuper);*/
     }
 
     @Override
