@@ -52,7 +52,7 @@ public class MarvelAdapter extends RecyclerView.Adapter<MarvelAdapter.MarvelView
 
     @Override
     public int getItemCount() {
-        return 0;
+        return supers.size();
     }
 
     public class MarvelViewHolder extends RecyclerView.ViewHolder{
