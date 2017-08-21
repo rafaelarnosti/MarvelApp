@@ -56,7 +56,7 @@ public class SuperFragment extends Fragment {
 
                     }
                 });
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         rvSuper.setLayoutManager(layoutManager);
         rvSuper.setAdapter(marvelAdapter);
         rvSuper.setHasFixedSize(true);
