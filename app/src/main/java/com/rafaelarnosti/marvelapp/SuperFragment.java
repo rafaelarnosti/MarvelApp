@@ -34,47 +34,59 @@ public class SuperFragment extends Fragment {
     private RecyclerView rvSuper;
     private MarvelAdapter marvelAdapter;
     private SuperAPI superAPI;
+    View itemView;
 
     public SuperFragment() {
         // Required empty public constructor
     }
 
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        carregaDados();
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View itemView = inflater.inflate(R.layout.fragment_super, container, false);
+        itemView = inflater.inflate(R.layout.fragment_super, container, false);
 
-        rvSuper = (RecyclerView) itemView.findViewById(R.id.rvSuper);
 
-        marvelAdapter = new MarvelAdapter(new ResponseHeroiMarvel(),
-                new OnItemClickListener() {
-                    @Override
-                    public void onItemClick(Super item) {
 
-                    }
-                });
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
-        rvSuper.setLayoutManager(layoutManager);
-        rvSuper.setAdapter(marvelAdapter);
-        rvSuper.setHasFixedSize(true);
-
-        carregaDados();
-        return inflater.inflate(R.layout.fragment_super, container, false);
+        return itemView;
     }
+
+
 
     private void carregaDados(){
         superAPI = APIUtils.getSuper();
         superAPI.getSupers().enqueue(new Callback<ResponseHeroiMarvel>() {
             @Override
             public void onResponse(Call<ResponseHeroiMarvel> call, Response<ResponseHeroiMarvel> response) {
-                if(response.isSuccessful()){
+                if (response.isSuccessful()) {
+
+                    rvSuper = (RecyclerView) itemView.findViewById(R.id.rvSuper);
+
+                    marvelAdapter = new MarvelAdapter(new ResponseHeroiMarvel(),
+                            new OnItemClickListener() {
+                                @Override
+                                public void onItemClick(Super item) {
+
+                                }
+                            });
+
+                    RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+                    rvSuper.setLayoutManager(layoutManager);
+                    rvSuper.setAdapter(marvelAdapter);
+                    rvSuper.setHasFixedSize(true);
+
                     marvelAdapter.update(response.body());
                 }
-            }
 
+            }
             @Override
             public void onFailure(Call<ResponseHeroiMarvel> call, Throwable t) {
                 Log.e("ERRO", "DEU RUIM");

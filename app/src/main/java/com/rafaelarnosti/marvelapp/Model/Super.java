@@ -44,11 +44,16 @@ public class Super {
         modified = modified;
     }
 
+   // public Image getThumbnail() {return thumbnail ;}
+
+    //public void setThumbnail(Image thumbnail){ thumbnail = thumbnail;}
+
 
     private int id;
     private String name;
     private String description;
     private Date modified;
+    //private Thumbnail thumbnail ;
 }
 
 
