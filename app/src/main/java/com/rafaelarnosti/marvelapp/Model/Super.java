@@ -48,12 +48,16 @@ public class Super {
 
     //public void setThumbnail(Image thumbnail){ thumbnail = thumbnail;}
 
+    public thumbnail getThumbnail() {return  thumbnail;}
+    public void  setThumbnail(thumbnail thumbnail){thumbnail = thumbnail;}
+
 
     private int id;
     private String name;
     private String description;
     private Date modified;
     //private Thumbnail thumbnail ;
+    private thumbnail thumbnail;
 }
 
 

@@ -45,9 +45,9 @@ public class MarvelAdapter extends RecyclerView.Adapter<MarvelAdapter.MarvelView
                 listener.onItemClick(supers.getData().getResults().get(position));
             }
         });
-/*        Picasso.with(holder.itemView.getContext())
-                .load(supers.getData().getResults().get(position).getResourceURI())
-                .into(holder.ivSuper);*/
+        Picasso.with(holder.itemView.getContext())
+                .load(supers.getData().getResults().get(position).getThumbnail().getPath()+"."+supers.getData().getResults().get(position).getThumbnail().getExtension())
+                .into(holder.ivSuper);
     }
 
     @Override

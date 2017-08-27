@@ -10,4 +10,9 @@ public class APIUtils {
     public static SuperAPI getSuper(){
         return RetrofitClient.getClient(BASE_URL).create(SuperAPI.class);
     }
+
+    public static UserAPI getUser(){
+        return RetrofitClient.getClient("http://www.mocky.io").create(UserAPI.class);
+    }
+
 }

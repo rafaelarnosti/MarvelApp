@@ -12,7 +12,7 @@
     tools:context="com.rafaelarnosti.marvelapp.MarvelNavigation"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/background_splash">
+    android:background="@drawable/marvel">
     <ImageView
         android:layout_width="@dimen/dimen_splash"
         android:layout_height="@dimen/dimen_splash_height"
