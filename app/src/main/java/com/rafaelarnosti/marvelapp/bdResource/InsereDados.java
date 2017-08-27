@@ -2,6 +2,7 @@ package com.rafaelarnosti.marvelapp.bdResource;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 /**
@@ -11,13 +12,13 @@ import android.database.sqlite.SQLiteDatabase;
 public class InsereDados {
 
     private SQLiteDatabase db;
-    private  bdController banco;
+    private bdController banco;
 
-    public InsereDados(Context context){
+    public InsereDados(Context context) {
         banco = new bdController(context);
     }
 
-    public String insereDado(String usuario, String senha){
+    public String insereDado(String usuario, String senha) {
         ContentValues valores;
         long resultado;
 
@@ -26,10 +27,22 @@ public class InsereDados {
         valores.put(bdController.USUARIO, usuario);
         valores.put(bdController.SENHA, senha);
 
-        resultado = db.insert(bdController.TABELA, null, valores);
+        Cursor c = db.rawQuery("SELECT * FROM usuarios WHERE TRIM(usuario) = '" + usuario.trim() + "'", null);
+
+        c.moveToFirst();
+
+        if (c.getCount() != 0) {
+            if (c.getString(c.getColumnIndex("usuario")) == "android") {
+                resultado = db.insert(bdController.TABELA, null, valores);
+            } else {
+                resultado = -1;
+            }
+        } else {
+            resultado = db.insert(bdController.TABELA, null, valores);
+        }
         db.close();
 
-        if (resultado ==-1)
+        if (resultado == -1)
             return "Erro ao inserir registro";
         else
             return "Registro Inserido com sucesso";

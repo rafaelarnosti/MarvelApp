@@ -22,11 +22,11 @@ public class bdController extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String sql = "CREATE TABLE"+TABELA+"("
-                + ID + "integer primary key autoincrement,"
-                + USUARIO + "text,"
-                + SENHA + "text,"
-                +")";
+        String sql = "CREATE TABLE "+TABELA+"("
+                + ID + " integer primary key autoincrement,"
+                + USUARIO + " text,"
+                + SENHA + " text"
+                +" )";
         db.execSQL(sql);
     }
 

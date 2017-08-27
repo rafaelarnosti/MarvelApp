@@ -15,7 +15,7 @@ public class RetrofitClient {
     private static Retrofit retrofit = null;
 
     public static Retrofit getClient(String baseUrl){
-        if(retrofit == null){
+
             OkHttpClient client = new OkHttpClient.Builder()
                     .addNetworkInterceptor(new StethoInterceptor())
                     .build();
@@ -24,7 +24,7 @@ public class RetrofitClient {
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
-        }
+
         return retrofit;
     }
 }

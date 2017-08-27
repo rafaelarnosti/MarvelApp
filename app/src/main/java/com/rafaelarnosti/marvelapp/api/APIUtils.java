@@ -8,7 +8,7 @@ public class APIUtils {
     public static final String BASE_URL = "http://gateway.marvel.com";
 
     public static SuperAPI getSuper(){
-        return RetrofitClient.getClient(BASE_URL).create(SuperAPI.class);
+        return RetrofitClient.getClient("http://gateway.marvel.com").create(SuperAPI.class);
     }
 
     public static UserAPI getUser(){
