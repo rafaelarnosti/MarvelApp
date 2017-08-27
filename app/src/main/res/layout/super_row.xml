@@ -22,7 +22,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvTitulo"
             android:textSize="26sp"
-            android:fontFamily="cursive"
             />
         <TextView
             android:layout_width="match_parent"

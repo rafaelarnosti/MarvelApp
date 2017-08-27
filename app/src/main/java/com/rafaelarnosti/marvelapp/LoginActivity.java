@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -58,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                     public void onSuccess(LoginResult loginResult) {
                         Intent intent = new Intent(LoginActivity.this,
                                 MarvelNavigation.class);
+
                         intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                         startActivity(intent);
                     }
@@ -79,10 +81,24 @@ public class LoginActivity extends AppCompatActivity {
         callbackManager.onActivityResult(requestCode, resultCode, data);
     }
     public void logar(View v){
+
+        String Login = tilLogin.getText().toString();
+        String Senha = tilSenha.getText().toString();
+
+        Cursor c = db.rawQuery("SELECT * FROM usuarios WHERE TRIM(usuario) = '" + Login.trim() + "' AND TRIM(senha)= '"+Senha.trim() +"'", null);
+
+        c.moveToFirst();
+        if(c.getCount() != 0)
+        {
         Intent intent = new Intent(LoginActivity.this,
                 MarvelNavigation.class);
+            intent.putExtra("usuario",Login);
         startActivity(intent);
         LoginActivity.this.finish();
+        }
+        else{
+            Toast.makeText(this.getBaseContext(),"Usuario ou senha Invalidos",Toast.LENGTH_LONG).show();
+        }
     }
 
 }
