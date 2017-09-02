@@ -52,6 +52,7 @@ public class SuperFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         itemView = inflater.inflate(R.layout.fragment_super, container, false);
+
         return itemView;
     }
 
@@ -75,14 +76,12 @@ public class SuperFragment extends Fragment {
 
                                 }
                             });
-                    
+
 
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
                     rvSuper.setLayoutManager(layoutManager);
                     rvSuper.setAdapter(marvelAdapter);
                     rvSuper.setHasFixedSize(true);
-
-
 
                     marvelAdapter.update(response.body());
                 }
