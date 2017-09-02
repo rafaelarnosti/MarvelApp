@@ -109,6 +109,13 @@ public class MarvelNavigation extends AppCompatActivity
                 transactioncf.addToBackStack(null);
                 transactioncf.commit();
                 break;
+            case R.id.sup_sobre:
+                SobreFragment sf = new SobreFragment();
+                FragmentTransaction transactionsf =  getSupportFragmentManager().beginTransaction();
+                transactionsf.replace(R.id.content_marvel_navigation,sf);
+                transactionsf.addToBackStack(null);
+                transactionsf.commit();
+                break;
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

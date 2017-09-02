@@ -27,7 +27,7 @@ public class bdController extends SQLiteOpenHelper {
                 + ID + " integer primary key autoincrement,"
                 + USUARIO + " text,"
                 + SENHA + " text,"
-                + AVATAR + "number"
+                + AVATAR + " number"
                 +" )";
         db.execSQL(sql);
     }

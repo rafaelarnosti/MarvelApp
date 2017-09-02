@@ -16,4 +16,5 @@
     <string name="personagens">Personagens</string>
     <string name="cadastro">Cadastro</string>
     <string name="nome">Nome</string>
+    <string name="txtSobre">Sobre</string>
 </resources>

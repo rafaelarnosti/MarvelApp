@@ -43,13 +43,14 @@ public class CadastroFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_cadastro, container, false);
 
         btnCadastro = (Button) view.findViewById(R.id.btnCadastro);
+        etNome = (EditText) view.findViewById(R.id.tilNome);
+        etSenha = (EditText) view.findViewById(R.id.tilSenhaCadastro);
+        radioGroup1 = (RadioGroup) view.findViewById(R.id.radioGroup1);
 
         btnCadastro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                etNome = (EditText) v.findViewById(R.id.tilNome);
-                etSenha = (EditText) v.findViewById(R.id.tilSenha);
-                radioGroup1 = (RadioGroup) v.findViewById(R.id.radioGroup1);
+
 
                 String Nome = etNome.getText().toString();
                 String Senha = etSenha.getText().toString();

@@ -10,6 +10,10 @@
             android:id="@+id/sup_cadastro"
             android:icon="@drawable/spiderman"
             android:title="@string/cadastro"/>
+        <item
+            android:id="@+id/sup_sobre"
+            android:icon="@drawable/spiderman"
+            android:title="@string/txtSobre"/>
         
 
     </group>
