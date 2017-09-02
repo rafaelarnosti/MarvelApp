@@ -57,6 +57,8 @@ public class SuperFragment extends Fragment {
 
 
 
+
+
     private void carregaDados(){
         superAPI = APIUtils.getSuper();
         superAPI.getSupers().enqueue(new Callback<ResponseHeroiMarvel>() {
@@ -73,11 +75,14 @@ public class SuperFragment extends Fragment {
 
                                 }
                             });
+                    
 
                     RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
                     rvSuper.setLayoutManager(layoutManager);
                     rvSuper.setAdapter(marvelAdapter);
                     rvSuper.setHasFixedSize(true);
+
+
 
                     marvelAdapter.update(response.body());
                 }

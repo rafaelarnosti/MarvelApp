@@ -14,6 +14,7 @@ public class bdController extends SQLiteOpenHelper {
     private static final String ID = "_id";
     public static final String USUARIO = "usuario";
     public static final String SENHA = "senha";
+    public static final String AVATAR = "avatar";
     private static final int VERSAO = 1;
 
     public bdController(Context context){
@@ -25,7 +26,8 @@ public class bdController extends SQLiteOpenHelper {
         String sql = "CREATE TABLE "+TABELA+"("
                 + ID + " integer primary key autoincrement,"
                 + USUARIO + " text,"
-                + SENHA + " text"
+                + SENHA + " text,"
+                + AVATAR + "number"
                 +" )";
         db.execSQL(sql);
     }

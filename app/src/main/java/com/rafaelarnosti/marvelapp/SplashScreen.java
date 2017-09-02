@@ -74,7 +74,7 @@ public class SplashScreen extends AppCompatActivity {
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
                     InsereDados insereDados = new InsereDados(getBaseContext());
-                    insereDados.insereDado(response.body().getUsuario(),response.body().getSenha());
+                    insereDados.insereDado(response.body().getUsuario(),response.body().getSenha(),1);
                 }
 
             }

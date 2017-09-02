@@ -13,4 +13,7 @@
     <string name="hint_Login">Login</string>
     <string name="hint_Senha">Senha</string>
     <string name="botao_login">Entrar</string>
+    <string name="personagens">Personagens</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="nome">Nome</string>
 </resources>

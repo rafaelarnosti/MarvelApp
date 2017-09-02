@@ -4,7 +4,13 @@
         <item
             android:id="@+id/sup_herois"
             android:icon="@drawable/spiderman"
-            android:title="Personagens" />
+            android:title = "@string/personagens" />
+
+        <item
+            android:id="@+id/sup_cadastro"
+            android:icon="@drawable/spiderman"
+            android:title="@string/cadastro"/>
+        
 
     </group>
 </menu>

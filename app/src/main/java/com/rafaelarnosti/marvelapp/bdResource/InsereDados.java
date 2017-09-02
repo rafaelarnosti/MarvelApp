@@ -18,7 +18,7 @@ public class InsereDados {
         banco = new bdController(context);
     }
 
-    public String insereDado(String usuario, String senha) {
+    public String insereDado(String usuario, String senha,int avatar) {
         ContentValues valores;
         long resultado;
 
@@ -26,6 +26,7 @@ public class InsereDados {
         valores = new ContentValues();
         valores.put(bdController.USUARIO, usuario);
         valores.put(bdController.SENHA, senha);
+        valores.put(bdController.AVATAR, avatar);
 
         Cursor c = db.rawQuery("SELECT * FROM usuarios WHERE TRIM(usuario) = '" + usuario.trim() + "'", null);
 

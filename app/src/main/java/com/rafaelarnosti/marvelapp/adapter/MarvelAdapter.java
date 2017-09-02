@@ -28,6 +28,8 @@ public class MarvelAdapter extends RecyclerView.Adapter<MarvelAdapter.MarvelView
     }
 
 
+
+
     @Override
     public MarvelViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());

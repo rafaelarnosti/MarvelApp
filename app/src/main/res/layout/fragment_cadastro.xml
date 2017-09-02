@@ -1,0 +1,119 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/ironback"
+    tools:context="com.rafaelarnosti.marvelapp.CadastroFragment">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/tilNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/nome"/>
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/tilSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/hint_Senha"
+            android:inputType="textPassword"            />
+    </android.support.design.widget.TextInputLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="fill_parent"
+            android:layout_height="71dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/btnSpider"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:drawableTop="@drawable/spiderman"
+                android:gravity="bottom|center"
+                />
+
+            <RadioButton
+                android:id="@+id/btnAmerica"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:drawableTop="@drawable/america"
+                android:gravity="bottom|center"/>
+
+            <RadioButton
+                android:id="@+id/btnCiclops"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:drawableTop="@drawable/ciclops"
+                android:gravity="bottom|center"/>
+
+            <RadioButton
+                android:id="@+id/btnFantastic"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:drawableTop="@drawable/fantastic"
+                android:gravity="bottom|center"/>
+
+            <RadioButton
+                android:id="@+id/btnHulk"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:drawableTop="@drawable/hulk"
+                android:gravity="bottom|center"/>
+
+            <RadioButton
+                android:id="@+id/btnIronMan"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:drawableTop="@drawable/ironman"
+                android:gravity="bottom|center"/>
+
+            <RadioButton
+                android:id="@+id/btnPunisher"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:drawableTop="@drawable/punisher"
+                android:gravity="bottom|center"/>
+
+            <RadioButton
+                android:id="@+id/btnWolverine"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="10dp"
+                android:drawableTop="@drawable/wolverine"
+                android:gravity="bottom|center"/>
+        </RadioGroup>
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/btnCadastro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cadastro" />
+
+
+</LinearLayout>
