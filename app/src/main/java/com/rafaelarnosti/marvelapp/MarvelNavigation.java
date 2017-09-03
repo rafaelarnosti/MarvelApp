@@ -51,7 +51,7 @@ public class MarvelNavigation extends AppCompatActivity
         Bundle bundle = getIntent().getExtras();
         String usuario = bundle.getString("usuario");
 
-        tvNome.setText("Olá,"+ usuario);
+        tvNome.setText("Olá, "+ usuario);
 
         navigationView.setNavigationItemSelectedListener(this);
     }

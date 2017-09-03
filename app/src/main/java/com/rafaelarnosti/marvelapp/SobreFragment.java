@@ -36,20 +36,6 @@ public class SobreFragment extends Fragment {
         // Inflate the layout for this fragment
         itemview = inflater.inflate(R.layout.fragment_sobre, container, false);
 
-
-        Animation anim = AnimationUtils.loadAnimation(getContext(),
-                R.anim.animacao_splash);
-        anim.reset();
-        //Pegando o nosso objeto criado no layout
-        ImageView iv = (ImageView) itemview.findViewById(R.id.ivGroot );
-        if (iv != null) {
-            iv.clearAnimation();
-            iv.startAnimation(anim);
-            GlideDrawableImageViewTarget target = new GlideDrawableImageViewTarget(iv);
-            Glide.with(this).load(R.drawable.groot).into(target);
-
-
-        }
         return itemview;
     }
 }

@@ -16,19 +16,24 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             tools:src="@mipmap/ic_launcher"
-            android:id="@+id/ivSuper"/>
+            android:paddingTop="20dp"
+            android:id="@+id/ivSuper"
+            android:background="#536DFE"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvTitulo"
             android:textSize="26sp"
-            />
+            android:background="#536DFE"
+            android:textColor="@color/primary_text"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/tvSubTitulo"
             android:layout_gravity="center"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:background="#536DFE"
+            android:textColor="@color/primary_text"/>
 
     </LinearLayout>
 

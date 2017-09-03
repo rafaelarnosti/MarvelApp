@@ -25,4 +25,18 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="Text" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorPrimary">@color/primary_text</item>
+        <item name="android:textColorSecondary">@color/primary_text</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textColorHighlight">@color/primary_text</item>
+        <item name="android:textColorHint">@color/primary_text</item>
+        <item name="android:textSize">20sp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/primary_text</item>
+        <item name="colorControlNormal">@color/primary_text</item>
+        <item name="colorControlActivated">@color/primary_text</item>
+    </style>
+
 </resources>
