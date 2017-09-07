@@ -11,10 +11,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+import com.rafaelarnosti.marvelapp.bdResource.InsereDados;
 
 public class SobreFragment extends Fragment {
     View itemview;
@@ -36,6 +39,16 @@ public class SobreFragment extends Fragment {
         // Inflate the layout for this fragment
         itemview = inflater.inflate(R.layout.fragment_sobre, container, false);
 
+        Button btnMapa = (Button) itemview.findViewById(R.id.btnMapa);
+
+        btnMapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(),
+                        MapsActivity.class);
+                startActivity(intent);
+            }
+        });
         return itemview;
     }
 }
