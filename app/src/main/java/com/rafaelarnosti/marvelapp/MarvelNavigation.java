@@ -13,12 +13,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MarvelNavigation extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private TextView tvNome;
+    private ImageView imageViewCapa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +49,14 @@ public class MarvelNavigation extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         tvNome = (TextView) navigationView.getHeaderView(0).findViewById(R.id.tvNome);
+        imageViewCapa = (ImageView)  navigationView.getHeaderView(0).findViewById(R.id.imageViewCapa);
 
         Bundle bundle = getIntent().getExtras();
         String usuario = bundle.getString("usuario");
+        Integer avatar = bundle.getInt("avatar");
 
         tvNome.setText("Olá, "+ usuario);
+        imageViewCapa.setImageResource(R.drawable.spiderman);
 
         navigationView.setNavigationItemSelectedListener(this);
     }

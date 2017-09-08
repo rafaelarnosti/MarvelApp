@@ -13,6 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -40,12 +41,22 @@ public class SobreFragment extends Fragment {
         itemview = inflater.inflate(R.layout.fragment_sobre, container, false);
 
         Button btnMapa = (Button) itemview.findViewById(R.id.btnMapa);
+        TextView tvLigar = (TextView) itemview.findViewById(R.id.tvLigar);
 
         btnMapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(),
                         MapsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        tvLigar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:(11)960879465"));
                 startActivity(intent);
             }
         });

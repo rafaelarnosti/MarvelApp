@@ -3,6 +3,7 @@ package com.rafaelarnosti.marvelapp;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,7 +22,6 @@ import com.rafaelarnosti.marvelapp.adapter.MarvelAdapter;
 import com.rafaelarnosti.marvelapp.bdResource.bdController;
 
 public class LoginActivity extends AppCompatActivity {
-    Button btnLogar;
     EditText tilLogin;
     EditText tilSenha;
     LoginButton loginButton;
@@ -88,17 +88,28 @@ public class LoginActivity extends AppCompatActivity {
         Cursor c = db.rawQuery("SELECT * FROM usuarios WHERE TRIM(usuario) = '" + Login.trim() + "' AND TRIM(senha)= '"+Senha.trim() +"'", null);
 
         c.moveToFirst();
+
         if(c.getCount() != 0)
         {
         Intent intent = new Intent(LoginActivity.this,
                 MarvelNavigation.class);
             intent.putExtra("usuario",Login);
+            intent.putExtra("avatar", c.getInt(c.getColumnIndex("avatar")));
         startActivity(intent);
         LoginActivity.this.finish();
         }
         else{
             Toast.makeText(this.getBaseContext(),"Usuario ou senha Invalidos",Toast.LENGTH_LONG).show();
         }
+    }
+    public void cadastro (View v){
+
+        CadastroFragment cf = new CadastroFragment();
+        FragmentTransaction transaction =  getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.activity_login,cf)
+        .addToBackStack(null)
+        .commit();
+
     }
 
 }
