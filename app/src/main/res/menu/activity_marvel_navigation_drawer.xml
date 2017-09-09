@@ -14,6 +14,10 @@
             android:id="@+id/sup_sobre"
             android:icon="@drawable/spiderman"
             android:title="@string/txtSobre"/>
+        <item
+            android:id="@+id/sup_usuarios"
+            android:icon="@drawable/spiderman"
+            android:title="@string/Usuarios"/>
         
 
     </group>

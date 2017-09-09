@@ -7,6 +7,7 @@ package com.rafaelarnosti.marvelapp.Model;
 public class User {
     private String usuario;
     private String senha;
+    private int avatar;
 
     public String getUsuario() {
         return usuario;
@@ -25,5 +26,11 @@ public class User {
     }
 
 
+    public int getAvatar() {
+        return avatar;
+    }
 
+    public void setAvatar(int avatar) {
+        this.avatar = avatar;
+    }
 }

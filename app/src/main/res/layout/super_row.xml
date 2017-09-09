@@ -35,6 +35,7 @@
             android:background="#536DFE"
             android:textColor="@color/primary_text"/>
 
+
     </LinearLayout>
 
 </android.support.v7.widget.CardView>

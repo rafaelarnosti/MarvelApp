@@ -103,12 +103,10 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
     public void cadastro (View v){
-
-        CadastroFragment cf = new CadastroFragment();
-        FragmentTransaction transaction =  getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.activity_login,cf)
-        .addToBackStack(null)
-        .commit();
+        Intent intent = new Intent(LoginActivity.this,
+                CadastroActivity.class);
+        startActivity(intent);
+        LoginActivity.this.finish();
 
     }
 
