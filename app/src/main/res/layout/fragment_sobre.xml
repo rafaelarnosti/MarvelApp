@@ -25,7 +25,7 @@
         android:id="@+id/btnMapa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="mapa"/>
+        android:text="@string/findmarvel"/>
 </LinearLayout>
 
 </RelativeLayout>
