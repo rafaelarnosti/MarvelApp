@@ -18,6 +18,10 @@
             android:id="@+id/sup_usuarios"
             android:icon="@drawable/spiderman"
             android:title="@string/Usuarios"/>
+        <item
+            android:id="@+id/sup_sair"
+            android:icon="@drawable/spiderman"
+            android:title="@string/Sair"/>
         
 
     </group>

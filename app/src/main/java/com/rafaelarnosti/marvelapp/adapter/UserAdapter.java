@@ -59,9 +59,49 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
                 showPopupMenu(v, position);
             }
         });
-/*        Picasso.with(holder.itemView.getContext())
-                .load()
-                .into();*/
+        switch (users.get(position).getAvatar()) {
+            case 2131558587:
+                Picasso.with(holder.itemView.getContext())
+                        .load(R.drawable.spiderman)
+                        .into(holder.ivSuper);
+                break;
+            case 2131558588:
+                Picasso.with(holder.itemView.getContext())
+                        .load(R.drawable.america)
+                        .into(holder.ivSuper);
+                break;
+            case 2131558589:
+                Picasso.with(holder.itemView.getContext())
+                        .load(R.drawable.ciclops)
+                        .into(holder.ivSuper);
+                break;
+            case 2131558590:
+                Picasso.with(holder.itemView.getContext())
+                        .load(R.drawable.fantastic)
+                        .into(holder.ivSuper);
+                break;
+            case 2131558591:
+                Picasso.with(holder.itemView.getContext())
+                        .load(R.drawable.hulk)
+                        .into(holder.ivSuper);
+                break;
+            case 2131558592:
+                Picasso.with(holder.itemView.getContext())
+                        .load(R.drawable.ironman)
+                        .into(holder.ivSuper);
+                break;
+            case 2131558593:
+                Picasso.with(holder.itemView.getContext())
+                        .load(R.drawable.punisher)
+                        .into(holder.ivSuper);
+                break;
+            case 2131558594:
+                Picasso.with(holder.itemView.getContext())
+                        .load(R.drawable.wolverine)
+                        .into(holder.ivSuper);
+                break;
+        }
+
     }
 
     private void showPopupMenu(View view, int listItemPosition) {
@@ -104,7 +144,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
                     sendIntent.setAction(Intent.ACTION_SEND);
                     sendIntent.putExtra(Intent.EXTRA_TEXT, users.get(listItemPositionForPopupMenu).getUsuario());
                     sendIntent.setType("text/plain");
-                    mContext.startActivity(Intent.createChooser(sendIntent,  users.get(listItemPositionForPopupMenu).getUsuario()));
+                    mContext.startActivity(Intent.createChooser(sendIntent, users.get(listItemPositionForPopupMenu).getUsuario()));
                 default:
             }
             return false;

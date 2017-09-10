@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Marvel Wiki</string>
+    <string name="Deletar">Deletar</string>
+    <string name="Editar">Editar</string>
+    <string name="Usuarios">Usuarios</string>
+    <string name="action_settings">Opções</string>
+    <string name="alterar">Alterar</string>
+    <string name="botao_login">Entrar</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="deletar">Deletar</string>
+    <string name="findmarvel">Descubra onde fica a Marvel</string>
+    <string name="hint_Login">Login</string>
+    <string name="hint_Senha">Senha</string>
+    <string name="navigation_drawer_close">Fechar o navigation drawer</string>
+    <string name="navigation_drawer_open">Abrir o navigation drawer</string>
+    <string name="nome">Nome</string>
+    <string name="personagens">Personagens</string>
+    <string name="title_activity_maps">Mapa</string>
+    <string name="txtSobre">Sobre</string>
+    <string name="txtTelefone">Ligue para nós:(11)960879465</string>
+    <string name="Sair">Sair</string>
+    <string name="cbLogin">Manter Conectado</string>
+</resources>

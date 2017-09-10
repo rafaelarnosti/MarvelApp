@@ -1,5 +1,6 @@
 package com.rafaelarnosti.marvelapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -49,15 +50,40 @@ public class MarvelNavigation extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
 
         tvNome = (TextView) navigationView.getHeaderView(0).findViewById(R.id.tvNome);
-        imageViewCapa = (ImageView)  navigationView.getHeaderView(0).findViewById(R.id.imageViewCapa);
+        imageViewCapa = (ImageView) navigationView.getHeaderView(0).findViewById(R.id.imageViewCapa);
 
         Bundle bundle = getIntent().getExtras();
         String usuario = bundle.getString("usuario");
         Integer avatar = bundle.getInt("avatar");
 
-        tvNome.setText("Olá, "+ usuario);
-        imageViewCapa.setImageResource(R.drawable.spiderman);
+        tvNome.setText("Hello " + usuario);
+        switch (avatar) {
+            case 2131558587:
+                imageViewCapa.setImageResource(R.drawable.spiderman);
+                break;
+            case 2131558588:
+                imageViewCapa.setImageResource(R.drawable.america);
+                break;
+            case 2131558589:
+                imageViewCapa.setImageResource(R.drawable.ciclops);
+                break;
+            case 2131558590:
+                imageViewCapa.setImageResource(R.drawable.fantastic);
+                break;
+            case 2131558591:
+                imageViewCapa.setImageResource(R.drawable.hulk);
+                break;
+            case 2131558592:
+                imageViewCapa.setImageResource(R.drawable.ironman);
+                break;
+            case 2131558593:
+                imageViewCapa.setImageResource(R.drawable.punisher);
+                break;
+            case 2131558594:
+                imageViewCapa.setImageResource(R.drawable.wolverine);
+                break;
 
+        }
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -102,33 +128,36 @@ public class MarvelNavigation extends AppCompatActivity
         switch (id) {
             case R.id.sup_herois:
                 SuperFragment bf = new SuperFragment();
-                FragmentTransaction transaction =  getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.content_marvel_navigation,bf);
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.content_marvel_navigation, bf);
                 transaction.addToBackStack(null);
                 transaction.commit();
                 break;
             case R.id.sup_cadastro:
                 CadastroFragment cf = new CadastroFragment();
-                FragmentTransaction transactioncf =  getSupportFragmentManager().beginTransaction();
-                transactioncf.replace(R.id.content_marvel_navigation,cf);
+                FragmentTransaction transactioncf = getSupportFragmentManager().beginTransaction();
+                transactioncf.replace(R.id.content_marvel_navigation, cf);
                 transactioncf.addToBackStack(null);
                 transactioncf.commit();
                 break;
             case R.id.sup_sobre:
                 SobreFragment sf = new SobreFragment();
-                FragmentTransaction transactionsf =  getSupportFragmentManager().beginTransaction();
-                transactionsf.replace(R.id.content_marvel_navigation,sf);
+                FragmentTransaction transactionsf = getSupportFragmentManager().beginTransaction();
+                transactionsf.replace(R.id.content_marvel_navigation, sf);
                 transactionsf.addToBackStack(null);
                 transactionsf.commit();
                 break;
             case R.id.sup_usuarios:
                 UsuariosFragment uf = new UsuariosFragment();
-                FragmentTransaction transactionuf =  getSupportFragmentManager().beginTransaction();
-                transactionuf.replace(R.id.content_marvel_navigation,uf);
+                FragmentTransaction transactionuf = getSupportFragmentManager().beginTransaction();
+                transactionuf.replace(R.id.content_marvel_navigation, uf);
                 transactionuf.addToBackStack(null);
                 transactionuf.commit();
                 break;
-
+            case R.id.sup_sair:
+                Intent intent = new Intent(MarvelNavigation.this,LoginActivity.class);
+                startActivity(intent);
+                MarvelNavigation.this.finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
