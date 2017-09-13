@@ -1,6 +1,8 @@
 package com.rafaelarnosti.marvelapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -156,6 +158,12 @@ public class MarvelNavigation extends AppCompatActivity
                 break;
             case R.id.sup_sair:
                 Intent intent = new Intent(MarvelNavigation.this,LoginActivity.class);
+                SharedPreferences sp = getSharedPreferences("MarvelApp", Context.MODE_PRIVATE);
+                SharedPreferences.Editor e = sp.edit();
+                e.putBoolean("check",false);
+                e.putString("usuario","");
+                e.putString("senha","");
+                e.apply();
                 startActivity(intent);
                 MarvelNavigation.this.finish();
         }

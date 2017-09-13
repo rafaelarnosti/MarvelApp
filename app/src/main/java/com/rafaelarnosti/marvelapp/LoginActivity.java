@@ -1,5 +1,6 @@
 package com.rafaelarnosti.marvelapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -40,7 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         tilSenha = (EditText) findViewById(R.id.tilSenha);
         cbLogin = (CheckBox) findViewById(R.id.cbLogin);
 
-        SharedPreferences sp = getPreferences(MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("MarvelApp", Context.MODE_PRIVATE);
         String username = sp.getString("usuario", null);
         String senha = sp.getString("senha",null);
         Boolean check = sp.getBoolean("check",false);
@@ -55,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
 
         tilLogin.setText(username);
         tilSenha.setText(senha);
-        //cbLogin.setChecked(check);
+        cbLogin.setChecked(check);
 
         if (cbLogin.isChecked()) {
             Intent intent = new Intent(LoginActivity.this,
@@ -120,7 +121,7 @@ public class LoginActivity extends AppCompatActivity {
             intent.putExtra("usuario", Login);
             intent.putExtra("avatar", c.getInt(c.getColumnIndex("avatar")));
             if (cbLogin.isChecked()) {
-                SharedPreferences sp = getPreferences(MODE_PRIVATE);
+                SharedPreferences sp = getSharedPreferences("MarvelApp", Context.MODE_PRIVATE);
                 SharedPreferences.Editor e = sp.edit();
                 e.putString("usuario", Login);
                 e.putString("senha",Senha);
