@@ -28,4 +28,6 @@
     <string name="findmarvel">Find out where the Marvel is</string>
     <string name="Sair">Exit</string>
     <string name="cbLogin">Keep Connected</string>
+    <string name="NomeDev">Rafael Luiz Mazzini Arnosti</string>
+    <string name="Ver">Version of System : 1.0</string>
 </resources>

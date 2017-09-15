@@ -14,18 +14,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/marvelbookicon"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/NomeDev"
+        android:gravity="center"/>
     <TextView
         android:id="@+id/tvLigar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txtTelefone"
-        android:onClick="ligar"/>
+        android:onClick="ligar"
+        android:gravity="center"/>
 
     <Button
         android:id="@+id/btnMapa"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/findmarvel"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/Ver"
+        android:gravity="bottom|center"/>
 </LinearLayout>
 
 </RelativeLayout>

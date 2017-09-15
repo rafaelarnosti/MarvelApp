@@ -43,6 +43,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         // Add a marker in Sydney and move the camera
         LatLng marvel = new LatLng(40.76096707,-73.98237735);
         mMap.addMarker(new MarkerOptions().position(marvel).title("Bem Vindo a Marvel"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marvel,20));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(marvel,16));
     }
 }

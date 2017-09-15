@@ -22,4 +22,5 @@
     <string name="txtTelefone">Ligue para nós:(11)960879465</string>
     <string name="Sair">Sair</string>
     <string name="cbLogin">Manter Conectado</string>
+    <string name="Ver">Versão do Sistema : 1.0</string>
 </resources>
