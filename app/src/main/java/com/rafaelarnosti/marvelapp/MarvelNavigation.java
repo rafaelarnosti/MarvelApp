@@ -60,28 +60,28 @@ public class MarvelNavigation extends AppCompatActivity
 
         tvNome.setText("Hello " + usuario);
         switch (avatar) {
-            case 2131558587:
+            case 2131558588:
                 imageViewCapa.setImageResource(R.drawable.spiderman);
                 break;
-            case 2131558588:
+            case 2131558589:
                 imageViewCapa.setImageResource(R.drawable.america);
                 break;
-            case 2131558589:
+            case 2131558590:
                 imageViewCapa.setImageResource(R.drawable.ciclops);
                 break;
-            case 2131558590:
+            case 2131558591:
                 imageViewCapa.setImageResource(R.drawable.fantastic);
                 break;
-            case 2131558591:
+            case 2131558592:
                 imageViewCapa.setImageResource(R.drawable.hulk);
                 break;
-            case 2131558592:
+            case 2131558593:
                 imageViewCapa.setImageResource(R.drawable.ironman);
                 break;
-            case 2131558593:
+            case 2131558594:
                 imageViewCapa.setImageResource(R.drawable.punisher);
                 break;
-            case 2131558594:
+            case 2131558595:
                 imageViewCapa.setImageResource(R.drawable.wolverine);
                 break;
 

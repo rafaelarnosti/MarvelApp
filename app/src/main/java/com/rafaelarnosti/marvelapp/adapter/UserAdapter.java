@@ -60,42 +60,42 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
             }
         });
         switch (users.get(position).getAvatar()) {
-            case 2131558587:
+            case 2131558588:
                 Picasso.with(holder.itemView.getContext())
                         .load(R.drawable.spiderman)
                         .into(holder.ivSuper);
                 break;
-            case 2131558588:
+            case 2131558589:
                 Picasso.with(holder.itemView.getContext())
                         .load(R.drawable.america)
                         .into(holder.ivSuper);
                 break;
-            case 2131558589:
+            case 2131558590:
                 Picasso.with(holder.itemView.getContext())
                         .load(R.drawable.ciclops)
                         .into(holder.ivSuper);
                 break;
-            case 2131558590:
+            case 2131558591:
                 Picasso.with(holder.itemView.getContext())
                         .load(R.drawable.fantastic)
                         .into(holder.ivSuper);
                 break;
-            case 2131558591:
+            case 2131558592:
                 Picasso.with(holder.itemView.getContext())
                         .load(R.drawable.hulk)
                         .into(holder.ivSuper);
                 break;
-            case 2131558592:
+            case 2131558593:
                 Picasso.with(holder.itemView.getContext())
                         .load(R.drawable.ironman)
                         .into(holder.ivSuper);
                 break;
-            case 2131558593:
+            case 2131558594:
                 Picasso.with(holder.itemView.getContext())
                         .load(R.drawable.punisher)
                         .into(holder.ivSuper);
                 break;
-            case 2131558594:
+            case 2131558595:
                 Picasso.with(holder.itemView.getContext())
                         .load(R.drawable.wolverine)
                         .into(holder.ivSuper);
